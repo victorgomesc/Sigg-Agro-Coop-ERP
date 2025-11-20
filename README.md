@@ -1,3 +1,2 @@
-<cemter>
-    <h1>Sigg Agro Coop</h1>
-</cemter>
+<h1>Sigg Agro Coop</h1>
+
