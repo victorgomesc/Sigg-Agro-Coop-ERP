@@ -1,0 +1,6 @@
+@SiggAgroCoop.Api_HostAddress = http://localhost:5043
+
+GET {{SiggAgroCoop.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
