@@ -5,6 +5,7 @@
 /home/victor/www/AgroErp/src/SiggAgroCoop.Domain/obj/Debug/net8.0/SiggAgroCoop.Domain.AssemblyInfoInputs.cache
 /home/victor/www/AgroErp/src/SiggAgroCoop.Domain/obj/Debug/net8.0/SiggAgroCoop.Domain.AssemblyInfo.cs
 /home/victor/www/AgroErp/src/SiggAgroCoop.Domain/obj/Debug/net8.0/SiggAgroCoop.Domain.csproj.CoreCompileInputs.cache
+/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/obj/Debug/net8.0/SiggAgroCoop.Domain.sourcelink.json
 /home/victor/www/AgroErp/src/SiggAgroCoop.Domain/obj/Debug/net8.0/SiggAgroCoop.Domain.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Domain/obj/Debug/net8.0/refint/SiggAgroCoop.Domain.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Domain/obj/Debug/net8.0/SiggAgroCoop.Domain.pdb

@@ -1,13 +1,40 @@
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using SiggAgroCoop.Domain.Interfaces;
+using SiggAgroCoop.Infrastructure.Context;
+using SiggAgroCoop.Infrastructure.Repositories;
+using SiggAgroCoop.Application.Commands.Farms;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Database (PostgreSQL)
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    )
+);
+
+// Repositories (Dependency Injection)
+builder.Services.AddScoped<IFarmRepository, FarmRepository>();
+builder.Services.AddScoped<ISectorRepository, SectorRepository>();
+builder.Services.AddScoped<IFieldRepository, FieldRepository>();
+
+// MediatR (CQRS)
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(typeof(CreateFarmCommand).Assembly)
+);
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// -----------------------------------------------------
+// HTTP Request Pipeline
+// -----------------------------------------------------
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -16,14 +43,22 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Controllers Routing
+app.MapControllers();
+
+// -----------------------------------------------------
+// (Optional) Example endpoint that already existed
+// -----------------------------------------------------
+
 var summaries = new[]
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+    "Freezing", "Bracing", "Chilly", "Cool", "Mild",
+    "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
+    var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
