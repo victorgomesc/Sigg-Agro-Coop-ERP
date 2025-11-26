@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SiggAgroCoop.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cafedea3be9f45a390f0fdc3409635f468cbbb26")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7e18e4bd9b0a4426a89b752ccaecc0114023dc4")]
 [assembly: System.Reflection.AssemblyProductAttribute("SiggAgroCoop.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SiggAgroCoop.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
