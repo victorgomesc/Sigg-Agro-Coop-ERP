@@ -3126,7 +3126,7 @@
     {
       "code": "NU1102",
       "level": "Error",
-      "message": "Não é possível encontrar o pacote MediatR.Extensions.Microsoft.DependencyInjection com a versão (>= 12.1.1)\n  - Encontradas 23 versões em nuget.org [Versão mais próxima: 11.1.0]",
+      "message": "Unable to find package MediatR.Extensions.Microsoft.DependencyInjection with version (>= 12.1.1)\n  - Found 23 version(s) in nuget.org [ Nearest version: 11.1.0 ]",
       "libraryId": "MediatR.Extensions.Microsoft.DependencyInjection",
       "targetGraphs": [
         "net8.0"
