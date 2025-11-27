@@ -56,7 +56,7 @@
             },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
-              "version": "[12.1.1, )"
+              "version": "[11.1.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",

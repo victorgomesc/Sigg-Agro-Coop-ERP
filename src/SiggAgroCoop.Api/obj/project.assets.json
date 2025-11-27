@@ -47,6 +47,19 @@
           }
         }
       },
+      "MediatR.Extensions.Microsoft.DependencyInjection/11.1.0": {
+        "type": "package",
+        "dependencies": {
+          "MediatR": "[11.0.0, 12.0.0)",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/8.0.21": {
         "type": "package",
         "dependencies": {
@@ -1160,6 +1173,19 @@
         "lib/netstandard2.0/MediatR.Contracts.xml",
         "mediatr.contracts.2.0.1.nupkg.sha512",
         "mediatr.contracts.nuspec"
+      ]
+    },
+    "MediatR.Extensions.Microsoft.DependencyInjection/11.1.0": {
+      "sha512": "RW3etRuy6Xp63cgqfC0r/ITOtUT0f9ymJl1+1XZdzsYUsfv7WBPC2kXGOP8IYpY/6c4Q6805vbIW/88DopUs3w==",
+      "type": "package",
+      "path": "mediatr.extensions.microsoft.dependencyinjection/11.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll",
+        "mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
+        "mediatr.extensions.microsoft.dependencyinjection.nuspec"
       ]
     },
     "Microsoft.AspNetCore.OpenApi/8.0.21": {
@@ -3009,7 +3035,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "MediatR >= 13.1.0",
-      "MediatR.Extensions.Microsoft.DependencyInjection >= 12.1.1",
+      "MediatR.Extensions.Microsoft.DependencyInjection >= 11.1.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.21",
       "Microsoft.EntityFrameworkCore >= 8.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.4",
@@ -3074,7 +3100,7 @@
           },
           "MediatR.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
-            "version": "[12.1.1, )"
+            "version": "[11.1.0, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
@@ -3124,10 +3150,11 @@
   },
   "logs": [
     {
-      "code": "NU1102",
-      "level": "Error",
-      "message": "Unable to find package MediatR.Extensions.Microsoft.DependencyInjection with version (>= 12.1.1)\n  - Found 23 version(s) in nuget.org [ Nearest version: 11.1.0 ]",
-      "libraryId": "MediatR.Extensions.Microsoft.DependencyInjection",
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 13.1.0 was resolved.",
+      "libraryId": "MediatR",
       "targetGraphs": [
         "net8.0"
       ]
