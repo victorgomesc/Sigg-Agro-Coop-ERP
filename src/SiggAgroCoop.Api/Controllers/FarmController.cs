@@ -29,4 +29,22 @@ public class FarmController : ControllerBase
         var farms = await _mediator.Send(new GetAllFarmsQuery());
         return Ok(farms);
     }
+
+    [HttpPut("{id:guid}")]
+    public async Task<IActionResult> Update(Guid id, [FromBody] UpdateFarmCommand command)
+    {
+        if (id != command.Id)
+            return BadRequest("Route ID and body ID mismatch.");
+
+        var success = await _mediator.Send(command);
+        return success ? Ok() : NotFound();
+    }
+
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> Delete(Guid id)
+    {
+        var success = await _mediator.Send(new DeleteFarmCommand(id));
+        return success ? Ok() : NotFound();
+    }
+
 }
