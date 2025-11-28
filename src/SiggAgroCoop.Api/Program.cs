@@ -5,6 +5,10 @@ using SiggAgroCoop.Infrastructure.Context;
 using SiggAgroCoop.Infrastructure.Repositories;
 using SiggAgroCoop.Application.Commands.Farms;
 
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using SiggAgroCoop.Application.Validation.Farms;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
