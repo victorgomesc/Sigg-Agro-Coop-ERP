@@ -102,7 +102,6 @@
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/SiggAgroCoop.Api.csproj.CoreCompileInputs.cache
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/SiggAgroCoop.Api.MvcApplicationPartsAssemblyInfo.cs
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/SiggAgroCoop.Api.MvcApplicationPartsAssemblyInfo.cache
-/home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/SiggAgroCoop.Api.sourcelink.json
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/staticwebassets.build.json
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/staticwebassets.development.json
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/staticwebassets/msbuild.SiggAgroCoop.Api.Microsoft.AspNetCore.StaticWebAssets.props
