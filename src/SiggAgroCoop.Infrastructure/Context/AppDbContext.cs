@@ -8,6 +8,7 @@ public class AppDbContext : DbContext
     public DbSet<Farm> Farms { get; set; } = default!;
     public DbSet<Sector> Sectors { get; set; } = default!;
     public DbSet<Field> Fields { get; set; } = default!;
+    public DbSet<Crop> Crops { get; set; } = default!;
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
@@ -28,5 +29,10 @@ public class AppDbContext : DbContext
             .HasOne(f => f.Sector)
             .WithMany(s => s.Fields)
             .HasForeignKey(f => f.SectorId);
+
+        modelBuilder.Entity<Crop>()
+            .HasOne(c => c.Farm)
+            .WithMany(f => f.Crops)
+            .HasForeignKey(c => c.FarmId);
     }
 }

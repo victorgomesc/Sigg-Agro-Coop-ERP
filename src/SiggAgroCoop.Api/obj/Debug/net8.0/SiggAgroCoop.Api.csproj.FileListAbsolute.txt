@@ -116,3 +116,6 @@
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/SiggAgroCoop.Api.pdb
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/SiggAgroCoop.Api.genruntimeconfig.cache
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/ref/SiggAgroCoop.Api.dll
+/home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/FluentValidation.dll
+/home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/FluentValidation.AspNetCore.dll
+/home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/FluentValidation.DependencyInjectionExtensions.dll
