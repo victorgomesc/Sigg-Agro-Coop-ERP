@@ -33,6 +33,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IFarmRepository, FarmRepository>();
 builder.Services.AddScoped<ISectorRepository, SectorRepository>();
 builder.Services.AddScoped<IFieldRepository, FieldRepository>();
+builder.Services.AddScoped<ICropRepository, CropRepository>();
 
 // MediatR (CQRS)
 builder.Services.AddMediatR(cfg =>
