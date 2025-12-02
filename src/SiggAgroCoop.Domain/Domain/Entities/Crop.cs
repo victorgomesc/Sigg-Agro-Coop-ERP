@@ -11,4 +11,6 @@ public class Crop : BaseEntity
     // Relationship: A Crop belongs to a Farm
     public Guid FarmId { get; set; }
     public Farm Farm { get; set; } = default!;
+    public List<Planting> Plantings { get; set; } = new();
+    public List<Harvest> Harvests { get; set; } = new();
 }

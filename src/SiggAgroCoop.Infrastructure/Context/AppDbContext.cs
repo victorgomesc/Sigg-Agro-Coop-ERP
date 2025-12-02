@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SiggAgroCoop.Domain.Entities;
+using SiggAgroCoop.Domain.Enums;
 
 namespace SiggAgroCoop.Infrastructure.Context;
 
@@ -9,6 +10,8 @@ public class AppDbContext : DbContext
     public DbSet<Sector> Sectors { get; set; } = default!;
     public DbSet<Field> Fields { get; set; } = default!;
     public DbSet<Crop> Crops { get; set; } = default!;
+    public DbSet<Planting> Plantings { get; set; } = default!;
+    public DbSet<Harvest> Harvests { get; set; } = default!;
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
@@ -19,20 +22,34 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Example: relationships
-        modelBuilder.Entity<Sector>()
-            .HasOne(s => s.Farm)
-            .WithMany(f => f.Sectors)
-            .HasForeignKey(s => s.FarmId);
-
+        // Field -> Sector
         modelBuilder.Entity<Field>()
             .HasOne(f => f.Sector)
             .WithMany(s => s.Fields)
             .HasForeignKey(f => f.SectorId);
 
-        modelBuilder.Entity<Crop>()
-            .HasOne(c => c.Farm)
-            .WithMany(f => f.Crops)
-            .HasForeignKey(c => c.FarmId);
+        // Field -> Plantings (1:N)
+        modelBuilder.Entity<Planting>()
+            .HasOne(p => p.Field)
+            .WithMany(f => f.Plantings)
+            .HasForeignKey(p => p.FieldId);
+
+        // Field -> Harvests (1:N)
+        modelBuilder.Entity<Harvest>()
+            .HasOne(h => h.Field)
+            .WithMany(f => f.Harvests)
+            .HasForeignKey(h => h.FieldId);
+
+        // Crop -> Plantings (1:N)
+        modelBuilder.Entity<Planting>()
+            .HasOne(p => p.Crop)
+            .WithMany(c => c.Plantings)
+            .HasForeignKey(p => p.CropId);
+
+        // Crop -> Harvests (1:N)
+        modelBuilder.Entity<Harvest>()
+            .HasOne(h => h.Crop)
+            .WithMany(c => c.Harvests)
+            .HasForeignKey(h => h.CropId);
     }
 }
