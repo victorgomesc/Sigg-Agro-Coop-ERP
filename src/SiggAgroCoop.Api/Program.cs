@@ -34,6 +34,8 @@ builder.Services.AddScoped<IFarmRepository, FarmRepository>();
 builder.Services.AddScoped<ISectorRepository, SectorRepository>();
 builder.Services.AddScoped<IFieldRepository, FieldRepository>();
 builder.Services.AddScoped<ICropRepository, CropRepository>();
+builder.Services.AddScoped<IPlantingRepository, PlantingRepository>();
+builder.Services.AddScoped<IHarvestRepository, HarvestRepository>();
 
 // MediatR (CQRS)
 builder.Services.AddMediatR(cfg =>
