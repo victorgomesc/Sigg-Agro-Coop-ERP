@@ -6,14 +6,9 @@ namespace SiggAgroCoop.Api.Controllers;
 
 [ApiController]
 [Route("api/field-lifecycle")]
-public class FieldLifecycleController : ControllerBase
+public class FieldLifecycleController(IMediator mediator) : ControllerBase
 {
-    private readonly IMediator _mediator;
-
-    public FieldLifecycleController(IMediator mediator)
-    {
-        _mediator = mediator;
-    }
+    private readonly IMediator _mediator = mediator;
 
     [HttpPost("start-planting")]
     public async Task<IActionResult> StartPlanting(StartPlantingCommand command)
