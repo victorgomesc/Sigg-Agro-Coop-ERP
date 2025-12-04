@@ -1,6 +1,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SiggAgroCoop.Application.Commands.FieldLifecycle;
+using SiggAgroCoop.Application.Queries.Plantings;
+using SiggAgroCoop.Application.Queries.Harvests;
 
 namespace SiggAgroCoop.Api.Controllers;
 
@@ -36,5 +38,19 @@ public class FieldLifecycleController(IMediator mediator) : ControllerBase
     {
         var ok = await _mediator.Send(command);
         return ok ? Ok() : NotFound();
+    }
+
+    [HttpGet("history/plantings/{fieldId:guid}")]
+    public async Task<IActionResult> GetPlantingsHistory(Guid fieldId)
+    {
+        var result = await _mediator.Send(new GetPlantingsByFieldQuery(fieldId));
+        return Ok(result);
+    }
+
+    [HttpGet("history/harvests/{fieldId:guid}")]
+    public async Task<IActionResult> GetHarvestsHistory(Guid fieldId)
+    {
+        var result = await _mediator.Send(new GetHarvestsByFieldQuery(fieldId));
+        return Ok(result);
     }
 }
