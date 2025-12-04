@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SiggAgroCoop.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a4717f8ed3f0792d4c11e7fa56d7b08bd56f9e7")]
 [assembly: System.Reflection.AssemblyProductAttribute("SiggAgroCoop.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SiggAgroCoop.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
