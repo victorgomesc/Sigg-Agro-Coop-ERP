@@ -12,6 +12,9 @@ public class AppDbContext : DbContext
     public DbSet<Crop> Crops { get; set; } = default!;
     public DbSet<Planting> Plantings { get; set; } = default!;
     public DbSet<Harvest> Harvests { get; set; } = default!;
+    public DbSet<Employee> Employees { get; set; } = default!;
+    public DbSet<Tool> Tools { get; set; } = default!;
+
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
@@ -51,5 +54,11 @@ public class AppDbContext : DbContext
             .HasOne(h => h.Crop)
             .WithMany(c => c.Harvests)
             .HasForeignKey(h => h.CropId);
+
+        modelBuilder.Entity<Tool>()
+            .HasOne(t => t.Employee)
+            .WithMany(e => e.Tools)
+            .HasForeignKey(t => t.EmployeeId);
+
     }
 }
