@@ -56,6 +56,35 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.ToTable("Crops");
                 });
 
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Employee", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("DocumentId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Employees");
+                });
+
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Farm", b =>
                 {
                     b.Property<Guid>("Id")
@@ -221,6 +250,39 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.ToTable("Sectors");
                 });
 
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Tool", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AcquisitionDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("EmployeeId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Tools");
+                });
+
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Crop", b =>
                 {
                     b.HasOne("SiggAgroCoop.Domain.Entities.Farm", "Farm")
@@ -292,11 +354,27 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.Navigation("Farm");
                 });
 
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Tool", b =>
+                {
+                    b.HasOne("SiggAgroCoop.Domain.Entities.Employee", "Employee")
+                        .WithMany("Tools")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Crop", b =>
                 {
                     b.Navigation("Harvests");
 
                     b.Navigation("Plantings");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Employee", b =>
+                {
+                    b.Navigation("Tools");
                 });
 
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Farm", b =>
