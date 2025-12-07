@@ -19,7 +19,7 @@ builder.Services.AddControllers();
 // FluentValidation
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<CreateFarmCommandValidator>();
-
+builder.Services.AddValidatorsFromAssemblyContaining<CreateEmployeeCommandValidator>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -39,8 +39,6 @@ builder.Services.AddScoped<IPlantingRepository, PlantingRepository>();
 builder.Services.AddScoped<IHarvestRepository, HarvestRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IToolRepository, ToolRepository>();
-
-builder.Services.AddValidatorsFromAssemblyContaining<CreateEmployeeCommandValidator>();
 
 // MediatR (CQRS)
 builder.Services.AddMediatR(cfg =>
@@ -66,7 +64,7 @@ app.MapControllers();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+// record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+// {
+//     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+// }
