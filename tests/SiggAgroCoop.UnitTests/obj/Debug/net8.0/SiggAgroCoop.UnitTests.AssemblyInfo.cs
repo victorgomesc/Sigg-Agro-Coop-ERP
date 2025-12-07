@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SiggAgroCoop.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+732ed373b3ab9c3be424bc4ed4e9afb83f73a9d4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+454d74345aa48d0db63bc2aac218252b63cf3dc6")]
 [assembly: System.Reflection.AssemblyProductAttribute("SiggAgroCoop.UnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SiggAgroCoop.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

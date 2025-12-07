@@ -14,6 +14,9 @@ public class AppDbContext : DbContext
     public DbSet<Harvest> Harvests { get; set; } = default!;
     public DbSet<Employee> Employees { get; set; } = default!;
     public DbSet<Tool> Tools { get; set; } = default!;
+    public DbSet<WorkOrder> WorkOrders { get; set; } = default!;
+    public DbSet<WorkOrderTool> WorkOrderTools { get; set; } = default!;
+
 
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
@@ -59,6 +62,20 @@ public class AppDbContext : DbContext
             .HasOne(t => t.Employee)
             .WithMany(e => e.Tools)
             .HasForeignKey(t => t.EmployeeId);
+        
+        modelBuilder.Entity<WorkOrderTool>()
+            .HasKey(wt => new { wt.WorkOrderId, wt.ToolId });
+
+        modelBuilder.Entity<WorkOrderTool>()
+            .HasOne(wt => wt.WorkOrder)
+            .WithMany(w => w.Tools)
+            .HasForeignKey(wt => wt.WorkOrderId);
+
+        modelBuilder.Entity<WorkOrderTool>()
+            .HasOne(wt => wt.Tool)
+            .WithMany()
+            .HasForeignKey(wt => wt.ToolId);
+
 
     }
 }

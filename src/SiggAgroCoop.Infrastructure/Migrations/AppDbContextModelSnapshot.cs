@@ -283,6 +283,59 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.ToTable("Tools");
                 });
 
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.WorkOrder", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("EmployeeId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("FieldId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("FieldId");
+
+                    b.ToTable("WorkOrders");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.WorkOrderTool", b =>
+                {
+                    b.Property<Guid>("WorkOrderId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ToolId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("WorkOrderId", "ToolId");
+
+                    b.HasIndex("ToolId");
+
+                    b.ToTable("WorkOrderTools");
+                });
+
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Crop", b =>
                 {
                     b.HasOne("SiggAgroCoop.Domain.Entities.Farm", "Farm")
@@ -365,6 +418,42 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.Navigation("Employee");
                 });
 
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.WorkOrder", b =>
+                {
+                    b.HasOne("SiggAgroCoop.Domain.Entities.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiggAgroCoop.Domain.Entities.Field", "Field")
+                        .WithMany()
+                        .HasForeignKey("FieldId");
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Field");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.WorkOrderTool", b =>
+                {
+                    b.HasOne("SiggAgroCoop.Domain.Entities.Tool", "Tool")
+                        .WithMany()
+                        .HasForeignKey("ToolId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiggAgroCoop.Domain.Entities.WorkOrder", "WorkOrder")
+                        .WithMany("Tools")
+                        .HasForeignKey("WorkOrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tool");
+
+                    b.Navigation("WorkOrder");
+                });
+
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Crop", b =>
                 {
                     b.Navigation("Harvests");
@@ -394,6 +483,11 @@ namespace SiggAgroCoop.Infrastructure.Migrations
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Sector", b =>
                 {
                     b.Navigation("Fields");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.WorkOrder", b =>
+                {
+                    b.Navigation("Tools");
                 });
 #pragma warning restore 612, 618
         }

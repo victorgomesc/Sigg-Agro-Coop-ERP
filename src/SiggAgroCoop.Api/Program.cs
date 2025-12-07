@@ -39,6 +39,7 @@ builder.Services.AddScoped<IPlantingRepository, PlantingRepository>();
 builder.Services.AddScoped<IHarvestRepository, HarvestRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IToolRepository, ToolRepository>();
+builder.Services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();
 
 // MediatR (CQRS)
 builder.Services.AddMediatR(cfg =>
@@ -46,10 +47,6 @@ builder.Services.AddMediatR(cfg =>
 );
 
 var app = builder.Build();
-
-// -----------------------------------------------------
-// HTTP Request Pipeline
-// -----------------------------------------------------
 
 if (app.Environment.IsDevelopment())
 {
@@ -59,12 +56,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Controllers Routing
 app.MapControllers();
 
 app.Run();
 
-// record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-// {
-//     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-// }
+
