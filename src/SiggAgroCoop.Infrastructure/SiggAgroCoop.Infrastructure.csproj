@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SiggAgroCoop.Domain\SiggAgroCoop.Domain.csproj" />
-    <ProjectReference Include="..\SiggAgroCoop.Application\SiggAgroCoop.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

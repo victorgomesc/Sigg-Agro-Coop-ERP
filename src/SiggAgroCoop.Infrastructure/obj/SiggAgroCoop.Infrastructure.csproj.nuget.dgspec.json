@@ -4,78 +4,6 @@
     "/home/victor/www/AgroErp/src/SiggAgroCoop.Infrastructure/SiggAgroCoop.Infrastructure.csproj": {}
   },
   "projects": {
-    "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj",
-        "projectName": "SiggAgroCoop.Application",
-        "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj",
-        "packagesPath": "/home/victor/.nuget/packages/",
-        "outputPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/victor/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj": {
-                "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "dependencies": {
-            "FluentValidation": {
-              "target": "Package",
-              "version": "[12.1.0, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[13.1.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.415/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -156,9 +84,6 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj": {
-                "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj"
-              },
               "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj": {
                 "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj"
               }

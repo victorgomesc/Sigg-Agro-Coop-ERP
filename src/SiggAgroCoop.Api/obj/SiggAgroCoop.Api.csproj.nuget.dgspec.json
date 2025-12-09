@@ -56,7 +56,7 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[13.1.0, )"
+              "version": "[11.1.0, )"
             },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -157,7 +157,19 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[13.1.0, )"
+              "version": "[11.1.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             }
           },
           "imports": [
@@ -260,9 +272,6 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj": {
-                "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj"
-              },
               "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj": {
                 "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj"
               }
