@@ -26,4 +26,5 @@ Atualmente o projeto encontra-se em fase de desenvolvimento.
 
 ## 📐 Arquitetura
 
+A arquitetura utilizada nesse projeto é uma combinação estruturada de <strong>Clean Architecture + DDD (Domain-Driven Design) + CQRS + Repository Pattern</strong>. Essa combinação forma uma solução modular de baixa dependencia e alta escalabilidade, baseado em padrões de sistemas corporativos modernos
 
