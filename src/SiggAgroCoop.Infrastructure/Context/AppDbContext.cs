@@ -1,11 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using SiggAgroCoop.Domain.Entities;
-using SiggAgroCoop.Application.Interfaces.Reporting;
 
 
 namespace SiggAgroCoop.Infrastructure.Context;
 
-public class AppDbContext : DbContext, IReportingDbContext
+public class AppDbContext : DbContext
 {
     public DbSet<Farm> Farms { get; set; } = default!;
     public DbSet<Sector> Sectors { get; set; } = default!;

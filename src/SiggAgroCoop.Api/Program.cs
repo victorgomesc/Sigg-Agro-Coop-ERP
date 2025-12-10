@@ -9,7 +9,6 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using SiggAgroCoop.Application.Validation.Farms;
 using SiggAgroCoop.Application.Validation.Employees;
-using SiggAgroCoop.Application.Interfaces.Reporting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,14 +40,12 @@ builder.Services.AddScoped<IHarvestRepository, HarvestRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IToolRepository, ToolRepository>();
 builder.Services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();
-builder.Services.AddScoped<IReportingDbContext>(provider =>
-    provider.GetRequiredService<AppDbContext>());
 
 
 // MediatR (CQRS)
-builder.Services.AddMediatR(cfg =>
-    cfg.RegisterServicesFromAssembly(typeof(CreateFarmCommand).Assembly)
-);
+// builder.Services.AddMediatR(cfg =>
+//     cfg.RegisterServicesFromAssembly(typeof(CreateFarmCommand).Assembly)
+// );
 
 var app = builder.Build();
 

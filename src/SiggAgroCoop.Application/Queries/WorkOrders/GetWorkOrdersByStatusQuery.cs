@@ -1,8 +1,6 @@
 using MediatR;
-using SiggAgroCoop.Domain.Enums;
 using SiggAgroCoop.Application.DTOs.WorkOrders;
 
 namespace SiggAgroCoop.Application.Queries.WorkOrders;
 
-public record GetWorkOrdersByStatusQuery(WorkOrderStatus Status) 
-    : IRequest<IEnumerable<WorkOrderDto>>;
+public record GetWorkOrdersByStatusQuery(string Status) : IRequest<List<WorkOrderDto>>;

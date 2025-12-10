@@ -14,4 +14,5 @@ public interface IWorkOrderRepository
     Task AddAsync(WorkOrder workOrder);
     Task UpdateAsync(WorkOrder workOrder);
     Task DeleteAsync(Guid id);
+    IQueryable<WorkOrder> Query();
 }

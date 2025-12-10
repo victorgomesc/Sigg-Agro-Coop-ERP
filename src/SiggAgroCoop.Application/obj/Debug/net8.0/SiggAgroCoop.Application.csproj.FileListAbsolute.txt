@@ -1,6 +1,16 @@
+/home/victor/www/AgroErp/src/SiggAgroCoop.Application/bin/Debug/net8.0/SiggAgroCoop.Application.deps.json
+/home/victor/www/AgroErp/src/SiggAgroCoop.Application/bin/Debug/net8.0/SiggAgroCoop.Application.dll
+/home/victor/www/AgroErp/src/SiggAgroCoop.Application/bin/Debug/net8.0/SiggAgroCoop.Application.pdb
+/home/victor/www/AgroErp/src/SiggAgroCoop.Application/bin/Debug/net8.0/SiggAgroCoop.Domain.dll
+/home/victor/www/AgroErp/src/SiggAgroCoop.Application/bin/Debug/net8.0/SiggAgroCoop.Domain.pdb
 /home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/SiggAgroCoop.Application.csproj.AssemblyReference.cache
 /home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/SiggAgroCoop.Application.GeneratedMSBuildEditorConfig.editorconfig
 /home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/SiggAgroCoop.Application.AssemblyInfoInputs.cache
 /home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/SiggAgroCoop.Application.AssemblyInfo.cs
 /home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/SiggAgroCoop.Application.csproj.CoreCompileInputs.cache
 /home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/SiggAgroCoop.Application.sourcelink.json
+/home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/SiggAgro.C3C2B54C.Up2Date
+/home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/SiggAgroCoop.Application.dll
+/home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/refint/SiggAgroCoop.Application.dll
+/home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/SiggAgroCoop.Application.pdb
+/home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/Debug/net8.0/ref/SiggAgroCoop.Application.dll

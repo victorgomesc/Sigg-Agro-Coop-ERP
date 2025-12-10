@@ -71,6 +71,13 @@ public class WorkOrderRepository : IWorkOrderRepository
             .ToListAsync();
     }
 
+    public IQueryable<WorkOrder> Query()
+    {
+        return _context.WorkOrders
+            .AsQueryable()
+            .AsNoTracking();
+    }
+
     public async Task UpdateAsync(WorkOrder workOrder)
     {
         _context.WorkOrders.Update(workOrder);

@@ -3,4 +3,4 @@ using SiggAgroCoop.Application.DTOs.WorkOrders;
 
 namespace SiggAgroCoop.Application.Queries.WorkOrders;
 
-public record GetAllWorkOrdersQuery() : IRequest<IEnumerable<WorkOrderDto>>;
+public record GetAllWorkOrdersQuery() : IRequest<List<WorkOrderDto>>;
