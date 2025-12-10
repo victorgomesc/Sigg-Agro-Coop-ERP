@@ -31,28 +31,32 @@ A arquitetura utilizada nesse projeto é uma combinação estruturada de <strong
 ### 1. Clean Architecture (Arquitetura Limpa)
 <strong>Objetivo: </strong> <p>Independência entre camadas.</p>
 <p>O projeto está dividido em:<p>
-Raiz- AgroErp/src <br>
-    |             <br>
-    |-- 1- <strong>SiggAgroCoop.Domain (Domain)</strong><br>
-    |        |- Contem regras de negocio puras<br>
-    |        |- Entidades<br>
-    |        |- Enums<br>
-    |        |- Interfaces de domínio (contratos de repositórios)<br>
-    |-- 2- <strong>SiggAgroCoop.Application (Application)</strong><br>
-    |        |- Casos de uso (Services, Handlers, DTOs)<br>
-    |        |- Orquestra lógica da aplicação<br>
-    |        |- Regras de negócio específicas do caso de uso<br>
-    |        |- Interfaces de serviços<br>
-    |-- 3- <strong>SiggAgroCoop.Infrastructure (Infrastructure)</strong><br>
-    |        |- Implementação concreta dos repositórios<br>
-    |        |- Entity Framework Core<br>
-    |        |- Conexão com o banco (Context)<br>
-    |        |- Migrations<br>
-    |        |- Serviços externos<br>
-    |-- 4- <strong>SiggAgroCoop.Api (Api)</strong><br>
-    |        |- Controllers<br>
-    |        |- Middlewares<br>
-    |        |- Configuração de autenticação<br>
-    |        |- Endpoints REST<br>
+📁 Raiz- AgroErp/src  
+|
+|-- 📦 1- **SiggAgroCoop.Domain (Domain)**
+|        |- 📌 Contém regras de negócio puras
+|        |- 🧱 Entidades
+|        |- 🏷️ Enums
+|        |- 📄 Interfaces de domínio (contratos de repositórios)
+|
+|-- ⚙️ 2- **SiggAgroCoop.Application (Application)**
+|        |- 🚀 Casos de uso (Services, Handlers, DTOs)
+|        |- 🔁 Orquestra lógica da aplicação
+|        |- 📚 Regras de negócio específicas do caso de uso
+|        |- 🔌 Interfaces de serviços
+|
+|-- 🗄️ 3- **SiggAgroCoop.Infrastructure (Infrastructure)**
+|        |- 💾 Implementação concreta dos repositórios
+|        |- 🧩 Entity Framework Core
+|        |- 🏛️ Conexão com o banco (Context)
+|        |- 🧱 Migrations
+|        |- 🌐 Serviços externos
+|
+|-- 🌍 4- **SiggAgroCoop.Api (Api)**
+|        |- 🎯 Controllers
+|        |- 🔐 Middlewares
+|        |- 🛡️ Configuração de autenticação
+|        |- 🔗 Endpoints REST
+
 
 
