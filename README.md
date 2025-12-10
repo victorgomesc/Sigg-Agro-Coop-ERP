@@ -1,9 +1,15 @@
-<h1>Sigg Agro Coop</h1>
+# SiggAgroCoop
 
-<p>Bem vindo ao Sigg Agro Coop, este projeto consiste na criação de um ERP (Enterprise Resource Planning) para propriedades rurais, o projeto tem como objetivo principal 
-  ajudar os proprietarios de pequenas, medias e grandes propriedades agricolas a gerenciar suas respectivas propriedades de uma forma mais eficiente e barata, o software que atualmente encontra-se me 
-  desenvolvimento podera ajudar os proprietarios e trabalhadores do meio rural a desenvolverem suas tarefas com mais rapidaz economia de recursos e eficiencia operacional.
-</p>
+A SiggAgroCoop é um sistema de grenciamento de propriedades rurais, que tem como principal objetivo ajudar os produtores 
+rurais a gerenciar suas propriedades de maneira eficiente através da tecnologia.
+
+## Estagio do Projeto
+
+Atualmente o projeto encontra-se em fase de desenvolvimento.
+
+## Autores
+
+- [@victorgomesc](https://github.com/victorgomesc)
 
 
 
