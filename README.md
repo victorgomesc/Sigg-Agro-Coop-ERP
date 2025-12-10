@@ -30,7 +30,8 @@ A arquitetura utilizada nesse projeto é uma combinação estruturada de <strong
 
 ### 1. Clean Architecture (Arquitetura Limpa)
 <strong>Objetivo: </strong> <p>Independência entre camadas.</p>
-<p>O projeto está dividido em:<p>
+<p>O projeto está dividido em:</p>
+
 📁 Raiz- AgroErp/src  
 |
 |-- 📦 1- **SiggAgroCoop.Domain (Domain)**
@@ -57,6 +58,7 @@ A arquitetura utilizada nesse projeto é uma combinação estruturada de <strong
 |        |- 🔐 Middlewares
 |        |- 🛡️ Configuração de autenticação
 |        |- 🔗 Endpoints REST
+
 
 
 
