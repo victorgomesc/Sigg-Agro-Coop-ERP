@@ -12,4 +12,7 @@ Atualmente o projeto encontra-se em fase de desenvolvimento.
 - [@victorgomesc](https://github.com/victorgomesc)
 
 
+## Tecnologias Utilizadas
+
+
 
