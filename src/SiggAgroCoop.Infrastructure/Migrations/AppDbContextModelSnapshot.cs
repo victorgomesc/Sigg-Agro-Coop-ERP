@@ -283,6 +283,43 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.ToTable("Tools");
                 });
 
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid?>("FarmId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FarmId");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.WorkOrder", b =>
                 {
                     b.Property<Guid>("Id")
@@ -416,6 +453,15 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.User", b =>
+                {
+                    b.HasOne("SiggAgroCoop.Domain.Entities.Farm", "Farm")
+                        .WithMany()
+                        .HasForeignKey("FarmId");
+
+                    b.Navigation("Farm");
                 });
 
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.WorkOrder", b =>
