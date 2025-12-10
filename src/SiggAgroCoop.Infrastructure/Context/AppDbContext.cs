@@ -16,6 +16,8 @@ public class AppDbContext : DbContext
     public DbSet<Tool> Tools { get; set; } = default!;
     public DbSet<WorkOrder> WorkOrders { get; set; } = default!;
     public DbSet<WorkOrderTool> WorkOrderTools { get; set; } = default!;
+    public DbSet<User> Users => Set<User>();
+
 
 
 
