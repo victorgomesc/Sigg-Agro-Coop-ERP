@@ -31,17 +31,17 @@ A arquitetura utilizada nesse projeto é uma combinação estruturada de <strong
 ### 1. Clean Architecture (Arquitetura Limpa)
 <strong>Objetivo: </strong> <p>Independência entre camadas.</p>
 <p>O projeto está dividido em:<p>
-Raiz- AgroErp/src
-    |
-    |-- 1- <strong>SiggAgroCoop.Domain (Domain)</strong>
-    |        |- Contem regras de negocio puras
-    |        |- Entidades
-    |        |- Enums
-    |        |- Interfaces de domínio (contratos de repositórios)
-    |-- 2- <strong>SiggAgroCoop.Application (Application)</strong>
-    |        |- Casos de uso (Services, Handlers, DTOs)
-    |        |- Orquestra lógica da aplicação
-    |        |- Regras de negócio específicas do caso de uso
-    |        |- Interfaces de serviços
+Raiz- AgroErp/src <br>
+    |             <br>
+    |-- 1- <strong>SiggAgroCoop.Domain (Domain)</strong><br>
+    |        |- Contem regras de negocio puras<br>
+    |        |- Entidades<br>
+    |        |- Enums<br>
+    |        |- Interfaces de domínio (contratos de repositórios)<br>
+    |-- 2- <strong>SiggAgroCoop.Application (Application)</strong><br>
+    |        |- Casos de uso (Services, Handlers, DTOs)<br>
+    |        |- Orquestra lógica da aplicação<br>
+    |        |- Regras de negócio específicas do caso de uso<br>
+    |        |- Interfaces de serviços<br>
 
 
