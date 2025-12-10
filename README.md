@@ -43,5 +43,16 @@ Raiz- AgroErp/src <br>
     |        |- Orquestra lógica da aplicação<br>
     |        |- Regras de negócio específicas do caso de uso<br>
     |        |- Interfaces de serviços<br>
+    |-- 3- <strong>SiggAgroCoop.Infrastructure (Infrastructure)</strong><br>
+    |        |- Implementação concreta dos repositórios<br>
+    |        |- Entity Framework Core<br>
+    |        |- Conexão com o banco (Context)<br>
+    |        |- Migrations<br>
+    |        |- Serviços externos<br>
+    |-- 4- <strong>SiggAgroCoop.Api (Api)</strong><br>
+    |        |- Controllers<br>
+    |        |- Middlewares<br>
+    |        |- Configuração de autenticação<br>
+    |        |- Endpoints REST<br>
 
 
