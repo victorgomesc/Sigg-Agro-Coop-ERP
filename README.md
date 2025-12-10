@@ -26,5 +26,22 @@ Atualmente o projeto encontra-se em fase de desenvolvimento.
 
 ## 📐 Arquitetura
 
-A arquitetura utilizada nesse projeto é uma combinação estruturada de <strong>Clean Architecture + DDD (Domain-Driven Design) + CQRS + Repository Pattern</strong>. Essa combinação forma uma solução modular de baixa dependencia e alta escalabilidade, baseado em padrões de sistemas corporativos modernos
+A arquitetura utilizada nesse projeto é uma combinação estruturada de <strong>Clean Architecture + DDD (Domain-Driven Design) + CQRS + Repository Pattern</strong>. Essa combinação forma uma solução modular de baixa dependencia e alta escalabilidade, baseado em padrões de sistemas corporativos modernos.
+
+### 1. Clean Architecture (Arquitetura Limpa)
+<strong>Objetivo: </strong> <p>Independência entre camadas.</p>
+<p>O projeto está dividido em:<p>
+Raiz- AgroErp/src
+    |
+    |-- 1- <strong>SiggAgroCoop.Domain (Domain)</strong>
+    |        |- Contem regras de negocio puras
+    |        |- Entidades
+    |        |- Enums
+    |        |- Interfaces de domínio (contratos de repositórios)
+    |-- 2- <strong>SiggAgroCoop.Application (Application)</strong>
+    |        |- Casos de uso (Services, Handlers, DTOs)
+    |        |- Orquestra lógica da aplicação
+    |        |- Regras de negócio específicas do caso de uso
+    |        |- Interfaces de serviços
+
 
