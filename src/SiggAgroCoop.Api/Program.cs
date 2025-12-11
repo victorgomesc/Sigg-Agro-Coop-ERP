@@ -42,9 +42,8 @@ builder.Services.AddScoped<IHarvestRepository, HarvestRepository>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IToolRepository, ToolRepository>();
 builder.Services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();
-builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IFarmRepository, FarmRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 
 

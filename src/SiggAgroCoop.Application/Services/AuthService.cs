@@ -14,39 +14,29 @@ namespace SiggAgroCoop.Application.Services;
 public class AuthService : IAuthService
 {
     private readonly IUserRepository _users;
-    private readonly IFarmRepository _farms;
     private readonly IConfiguration _config;
 
-    public AuthService(IUserRepository users, IFarmRepository farms, IConfiguration config)
+    public AuthService(IUserRepository users, IConfiguration config)
     {
         _users = users;
-        _farms = farms;
         _config = config;
     }
 
     public async Task<AuthResponseDto> RegisterAsync(RegisterUserDto dto)
     {
-        var role = Enum.Parse<UserRole>(dto.Role, true);
+        var roleString = dto.Role ?? "Employee";
+
+        if (!Enum.TryParse<UserRole>(roleString, true, out var role))
+            role = UserRole.Employee;
 
         var user = new User
         {
             FullName = dto.FullName,
             Email = dto.Email,
             PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
-            Role = role
+            Role = role,
+            FarmId = null
         };
-
-        // Se o usuário novo for Admin → cria automaticamente uma fazenda
-        if (role == UserRole.Admin)
-        {
-            var farm = new Farm
-            {
-                Name = $"{dto.FullName}'s Farm"
-            };
-
-            await _farms.AddAsync(farm);
-            user.FarmId = farm.Id;
-        }
 
         await _users.AddAsync(user);
 

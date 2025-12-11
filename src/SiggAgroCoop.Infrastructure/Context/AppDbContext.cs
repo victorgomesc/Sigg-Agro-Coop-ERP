@@ -30,12 +30,6 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-         modelBuilder.Entity<Farm>(entity =>
-    {
-        entity.Property(f => f.Location)
-              .HasDefaultValue("Não informado"); // Preenche caso venha null
-    });
-
         // Field -> Sector
         modelBuilder.Entity<Field>()
             .HasOne(f => f.Sector)
