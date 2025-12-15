@@ -4,14 +4,214 @@
     "/home/victor/www/AgroErp/tests/SiggAgroCoop.IntegrationTests/SiggAgroCoop.IntegrationTests.csproj": {}
   },
   "projects": {
-    "/home/victor/www/AgroErp/tests/SiggAgroCoop.IntegrationTests/SiggAgroCoop.IntegrationTests.csproj": {
+    "/home/victor/www/AgroErp/src/SiggAgroCoop.Api/SiggAgroCoop.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/victor/www/AgroErp/tests/SiggAgroCoop.IntegrationTests/SiggAgroCoop.IntegrationTests.csproj",
-        "projectName": "SiggAgroCoop.IntegrationTests",
-        "projectPath": "/home/victor/www/AgroErp/tests/SiggAgroCoop.IntegrationTests/SiggAgroCoop.IntegrationTests.csproj",
+        "projectUniqueName": "/home/victor/www/AgroErp/src/SiggAgroCoop.Api/SiggAgroCoop.Api.csproj",
+        "projectName": "SiggAgroCoop.Api",
+        "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Api/SiggAgroCoop.Api.csproj",
         "packagesPath": "/home/victor/.nuget/packages/",
-        "outputPath": "/home/victor/www/AgroErp/tests/SiggAgroCoop.IntegrationTests/obj/",
+        "outputPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/victor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj": {
+                "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj"
+              },
+              "/home/victor/www/AgroErp/src/SiggAgroCoop.Infrastructure/SiggAgroCoop.Infrastructure.csproj": {
+                "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Infrastructure/SiggAgroCoop.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj",
+        "projectName": "SiggAgroCoop.Application",
+        "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj",
+        "packagesPath": "/home/victor/.nuget/packages/",
+        "outputPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/victor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj": {
+                "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.15.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj",
+        "projectName": "SiggAgroCoop.Domain",
+        "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj",
+        "packagesPath": "/home/victor/.nuget/packages/",
+        "outputPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/victor/.nuget/NuGet/NuGet.Config"
@@ -42,10 +242,180 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/victor/www/AgroErp/src/SiggAgroCoop.Infrastructure/SiggAgroCoop.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/victor/www/AgroErp/src/SiggAgroCoop.Infrastructure/SiggAgroCoop.Infrastructure.csproj",
+        "projectName": "SiggAgroCoop.Infrastructure",
+        "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Infrastructure/SiggAgroCoop.Infrastructure.csproj",
+        "packagesPath": "/home/victor/.nuget/packages/",
+        "outputPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/victor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj": {
+                "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Domain/SiggAgroCoop.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/victor/www/AgroErp/tests/SiggAgroCoop.IntegrationTests/SiggAgroCoop.IntegrationTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/victor/www/AgroErp/tests/SiggAgroCoop.IntegrationTests/SiggAgroCoop.IntegrationTests.csproj",
+        "projectName": "SiggAgroCoop.IntegrationTests",
+        "projectPath": "/home/victor/www/AgroErp/tests/SiggAgroCoop.IntegrationTests/SiggAgroCoop.IntegrationTests.csproj",
+        "packagesPath": "/home/victor/.nuget/packages/",
+        "outputPath": "/home/victor/www/AgroErp/tests/SiggAgroCoop.IntegrationTests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/victor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/victor/www/AgroErp/src/SiggAgroCoop.Api/SiggAgroCoop.Api.csproj": {
+                "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Api/SiggAgroCoop.Api.csproj"
+              },
+              "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj": {
+                "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Application/SiggAgroCoop.Application.csproj"
+              },
+              "/home/victor/www/AgroErp/src/SiggAgroCoop.Infrastructure/SiggAgroCoop.Infrastructure.csproj": {
+                "projectPath": "/home/victor/www/AgroErp/src/SiggAgroCoop.Infrastructure/SiggAgroCoop.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.8.0, )"
+              "version": "[17.11.1, )"
             },
             "coverlet.collector": {
               "target": "Package",
@@ -53,11 +423,13 @@
             },
             "xunit": {
               "target": "Package",
-              "version": "[2.5.3, )"
+              "version": "[2.9.2, )"
             },
             "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[2.5.3, )"
+              "version": "[2.8.2, )"
             }
           },
           "imports": [
