@@ -22,6 +22,31 @@ namespace SiggAgroCoop.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Category", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("character varying(150)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories", (string)null);
+                });
+
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Crop", b =>
                 {
                     b.Property<Guid>("Id")
@@ -42,7 +67,7 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Variety")
@@ -77,7 +102,7 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -102,7 +127,7 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -132,7 +157,7 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -166,7 +191,7 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<double>("YieldQuantity")
@@ -183,6 +208,48 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.HasIndex("FieldId");
 
                     b.ToTable("Harvests");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.InventoryMovement", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("MovementDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("MovementType")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("PerformedByUserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uuid");
+
+                    b.Property<decimal>("Quantity")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid?>("SupplierId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SupplierId");
+
+                    b.ToTable("InventoryMovements", (string)null);
                 });
 
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Planting", b =>
@@ -212,7 +279,7 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.Property<double>("SeedDensityKgPerHectare")
                         .HasColumnType("double precision");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -222,6 +289,49 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.HasIndex("FieldId");
 
                     b.ToTable("Plantings");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Product", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("CurrentStock")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid?>("DefaultSupplierId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<Guid>("UnitOfMeasureId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("DefaultSupplierId");
+
+                    b.HasIndex("UnitOfMeasureId");
+
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Sector", b =>
@@ -240,7 +350,7 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -248,6 +358,38 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.HasIndex("FarmId");
 
                     b.ToTable("Sectors");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Supplier", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("DocumentNumber")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Suppliers", (string)null);
                 });
 
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Tool", b =>
@@ -273,7 +415,7 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -281,6 +423,33 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.HasIndex("EmployeeId");
 
                     b.ToTable("Tools");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.UnitOfMeasure", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Symbol")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UnitsOfMeasure", (string)null);
                 });
 
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.User", b =>
@@ -310,7 +479,7 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.Property<int>("Role")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -346,7 +515,7 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
@@ -414,6 +583,24 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.Navigation("Field");
                 });
 
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.InventoryMovement", b =>
+                {
+                    b.HasOne("SiggAgroCoop.Domain.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiggAgroCoop.Domain.Entities.Supplier", "Supplier")
+                        .WithMany("InventoryMovements")
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Supplier");
+                });
+
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Planting", b =>
                 {
                     b.HasOne("SiggAgroCoop.Domain.Entities.Crop", "Crop")
@@ -431,6 +618,32 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.Navigation("Crop");
 
                     b.Navigation("Field");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Product", b =>
+                {
+                    b.HasOne("SiggAgroCoop.Domain.Entities.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiggAgroCoop.Domain.Entities.Supplier", "DefaultSupplier")
+                        .WithMany("Products")
+                        .HasForeignKey("DefaultSupplierId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("SiggAgroCoop.Domain.Entities.UnitOfMeasure", "UnitOfMeasure")
+                        .WithMany("Products")
+                        .HasForeignKey("UnitOfMeasureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("DefaultSupplier");
+
+                    b.Navigation("UnitOfMeasure");
                 });
 
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Sector", b =>
@@ -500,6 +713,11 @@ namespace SiggAgroCoop.Infrastructure.Migrations
                     b.Navigation("WorkOrder");
                 });
 
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Category", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Crop", b =>
                 {
                     b.Navigation("Harvests");
@@ -529,6 +747,18 @@ namespace SiggAgroCoop.Infrastructure.Migrations
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Sector", b =>
                 {
                     b.Navigation("Fields");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.Supplier", b =>
+                {
+                    b.Navigation("InventoryMovements");
+
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("SiggAgroCoop.Domain.Entities.UnitOfMeasure", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("SiggAgroCoop.Domain.Entities.WorkOrder", b =>

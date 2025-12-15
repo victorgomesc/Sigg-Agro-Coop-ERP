@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SiggAgroCoop.Domain.Entities;
+using SiggAgroCoop.Infrastructure.Configurations;
 
 
 namespace SiggAgroCoop.Infrastructure.Context;
@@ -17,6 +18,11 @@ public class AppDbContext : DbContext
     public DbSet<WorkOrder> WorkOrders { get; set; } = default!;
     public DbSet<WorkOrderTool> WorkOrderTools { get; set; } = default!;
     public DbSet<User> Users => Set<User>();
+    public DbSet<Category> Categories => Set<Category>();
+    public DbSet<UnitOfMeasure> UnitsOfMeasure => Set<UnitOfMeasure>();
+    public DbSet<Product> Products => Set<Product>();
+    public DbSet<Supplier> Suppliers => Set<Supplier>();
+    public DbSet<InventoryMovement> InventoryMovements => Set<InventoryMovement>();
 
 
 
@@ -77,6 +83,12 @@ public class AppDbContext : DbContext
             .HasOne(wt => wt.Tool)
             .WithMany()
             .HasForeignKey(wt => wt.ToolId);
+        
+        modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+        modelBuilder.ApplyConfiguration(new UnitOfMeasureConfiguration());
+        modelBuilder.ApplyConfiguration(new SupplierConfiguration());
+        modelBuilder.ApplyConfiguration(new ProductConfiguration());
+        modelBuilder.ApplyConfiguration(new InventoryMovementConfiguration());
 
 
     }
