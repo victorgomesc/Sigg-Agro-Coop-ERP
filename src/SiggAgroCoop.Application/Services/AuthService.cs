@@ -56,23 +56,40 @@ public class AuthService : IAuthService
 
     private AuthResponseDto GenerateToken(User user)
     {
-        var key = Encoding.UTF8.GetBytes(_config["Jwt:Key"]!);
+        var keyString = _config["Jwt:Key"]
+            ?? throw new Exception("Jwt:Key not configured.");
+
+        var key = Encoding.UTF8.GetBytes(keyString);
+
+        var expiryMinutesRaw = _config["Jwt:ExpiryMinutes"];
+        var expiryMinutes = int.TryParse(expiryMinutesRaw, out var minutes) && minutes > 0
+            ? minutes
+            : 480; // fallback: 8 horas
+
+        var expiresAt = DateTime.UtcNow.AddMinutes(expiryMinutes);
 
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
             new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, user.Role.ToString()),
-            new Claim("farmId", user.FarmId?.ToString() ?? "")
+            new Claim(ClaimTypes.Role, user.Role.ToString())
         };
 
-        var creds = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256);
+        if (user.FarmId.HasValue)
+        {
+            claims.Add(new Claim("farmId", user.FarmId.Value.ToString()));
+        }
+
+        var creds = new SigningCredentials(
+            new SymmetricSecurityKey(key),
+            SecurityAlgorithms.HmacSha256
+        );
 
         var token = new JwtSecurityToken(
             issuer: _config["Jwt:Issuer"],
             audience: _config["Jwt:Audience"],
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(8),
+            expires: expiresAt,
             signingCredentials: creds
         );
 
@@ -81,7 +98,8 @@ public class AuthService : IAuthService
             Token = new JwtSecurityTokenHandler().WriteToken(token),
             Role = user.Role.ToString(),
             UserId = user.Id,
-            FarmId = user.FarmId
+            FarmId = user.FarmId,
+            ExpiresAt = expiresAt
         };
     }
 }

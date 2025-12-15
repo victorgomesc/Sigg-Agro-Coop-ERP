@@ -6,4 +6,6 @@ public class AuthResponseDto
     public string Role { get; set; } = default!;
     public Guid UserId { get; set; }
     public Guid? FarmId { get; set; }
+    public DateTime ExpiresAt { get; set; }
+
 }
