@@ -83,6 +83,7 @@ builder.Services.AddScoped<IToolRepository, ToolRepository>();
 builder.Services.AddScoped<IWorkOrderRepository, WorkOrderRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+
 // Auth
 builder.Services.AddScoped<IAuthService, AuthService>();
 

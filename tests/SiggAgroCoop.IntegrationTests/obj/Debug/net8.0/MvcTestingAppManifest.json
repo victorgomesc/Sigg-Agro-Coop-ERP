@@ -1,0 +1,6 @@
+{
+  "SiggAgroCoop.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/victor\/www\/AgroErp\/src\/SiggAgroCoop.Api",
+  "SiggAgroCoop.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/victor\/www\/AgroErp\/src\/SiggAgroCoop.Application",
+  "SiggAgroCoop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/victor\/www\/AgroErp\/src\/SiggAgroCoop.Domain",
+  "SiggAgroCoop.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/victor\/www\/AgroErp\/src\/SiggAgroCoop.Infrastructure"
+}

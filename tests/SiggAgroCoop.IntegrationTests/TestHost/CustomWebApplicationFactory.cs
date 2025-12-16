@@ -1,69 +1,37 @@
-using System.Net.Http;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
-using SiggAgroCoop.Infrastructure.Context;
+using SiggAgroCoop.IntegrationTests.Auth;
 
 namespace SiggAgroCoop.IntegrationTests.TestHost;
 
-public class CustomWebApplicationFactory : WebApplicationFactory<Program>
+public class CustomWebApplicationFactory
+    : WebApplicationFactory<Program>
 {
-    private SqliteConnection? _connection;
-
     protected override IHost CreateHost(IHostBuilder builder)
     {
-        builder.ConfigureAppConfiguration((context, config) =>
-        {
-            var settings = new Dictionary<string, string?>
-            {
-                ["Jwt:Key"] = "TEST_KEY_32_CHARS_MINIMUM_1234567890",
-                ["Jwt:Issuer"] = "siggagrocoop",
-                ["Jwt:Audience"] = "siggagrocoop-users",
-                ["Jwt:ExpiryMinutes"] = "60"
-            };
-
-            config.AddInMemoryCollection(settings);
-        });
+        builder.UseEnvironment("Testing");
 
         builder.ConfigureServices(services =>
         {
-            // Remove AppDbContext atual (Postgres)
-            var dbContextDescriptor = services.SingleOrDefault(d =>
-                d.ServiceType == typeof(DbContextOptions<AppDbContext>));
+            // Remove autenticação real (JWT)
+            services.RemoveAll<AuthenticationSchemeOptions>();
 
-            if (dbContextDescriptor != null)
-                services.Remove(dbContextDescriptor);
-
-            // SQLite InMemory
-            _connection = new SqliteConnection("DataSource=:memory:");
-            _connection.Open();
-
-            services.AddDbContext<AppDbContext>(options =>
+            // Adiciona autenticação fake para testes
+            services.AddAuthentication(options =>
             {
-                options.UseSqlite(_connection);
-            });
-
-            // Garante schema criado
-            var sp = services.BuildServiceProvider();
-            using var scope = sp.CreateScope();
-            var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-            db.Database.EnsureCreated();
+                options.DefaultAuthenticateScheme = TestAuthHandler.AuthenticationSchemeName;
+                options.DefaultChallengeScheme = TestAuthHandler.AuthenticationSchemeName;
+            })
+            .AddScheme<AuthenticationSchemeOptions, TestAuthHandler>(
+                TestAuthHandler.AuthenticationSchemeName,
+                options => { }
+            );
         });
 
         return base.CreateHost(builder);
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-        if (disposing)
-        {
-            _connection?.Close();
-            _connection?.Dispose();
-        }
     }
 }

@@ -13,6 +13,7 @@
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/MediatR.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/MediatR.Contracts.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
+/home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll
@@ -35,6 +36,8 @@
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.OpenApi.dll
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Mono.TextTemplating.dll
@@ -133,6 +136,3 @@
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/SiggAgroCoop.Api.pdb
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/SiggAgroCoop.Api.genruntimeconfig.cache
 /home/victor/www/AgroErp/src/SiggAgroCoop.Api/obj/Debug/net8.0/ref/SiggAgroCoop.Api.dll
-/home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
-/home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
-/home/victor/www/AgroErp/src/SiggAgroCoop.Api/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
